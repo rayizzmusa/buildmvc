@@ -32,4 +32,34 @@ class BarangController extends BaseController
         $this->view('barang/insert');
         $this->view('template/footer');
     }
+
+    public function insert_barang()
+    {
+        $fields = [
+            'nama_barang' => 'string | required | alphanumeric ',
+            'jumlah' => 'int | required',
+            'harga_satuan' => 'float | required',
+            'kadaluarsa' => 'string',
+        ];
+
+        $message = [
+            'nama_barang' => [
+                'required' => 'Nama Barang Harus diisi',
+                'alphanumeric' => 'Masukan huruf dan angka',
+                'between' => 'Nama Barang harus diantara 3 dan 25 karakter'
+            ],
+
+            'jumlah' => [
+                'required' => 'Jumlah harus diisi'
+            ],
+
+            'harga_satuan' => [
+                'required' => 'Harga Satuan harus diisi'
+            ]
+        ];
+
+
+        [$inputs, $errors] = $this->filter($_POST, $fields, $message);
+        var_dump($errors);
+    }
 }
