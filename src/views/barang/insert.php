@@ -1,3 +1,21 @@
+<?php
+$data = Messages::getData();
+$namaBarang = '';
+$jumlah = '';
+$harga = '';
+$kadaluarsa = '';
+
+if ($data) {
+    $namaBarang = $data['nama_barang'];
+    $jumlah = $data['jumlah'];
+    $harga = $data['harga_satuan'];
+    $kadaluarsa = $data['kadaluarsa'];
+}
+
+Messages::flash();
+
+?>
+
 <div class="row">
     <div class="container col-50">
         <h2 class="header">Input Barang</h2>
@@ -7,7 +25,7 @@
                     <label for="nama_barang">Nama Barang</label>
                 </div>
                 <div class="col-50">
-                    <input type="text" id="nama_barang" name="nama_barang">
+                    <input type="text" id="nama_barang" name="nama_barang" value="<?= $namaBarang ?>">
                 </div>
             </div>
             <div class="row">
@@ -15,7 +33,7 @@
                     <label for="jumlah">Jumlah</label>
                 </div>
                 <div class="col-50">
-                    <input type="number" id="jumlah" name="jumlah">
+                    <input type="number" id="jumlah" name="jumlah" value="<?= $jumlah ?>">
                 </div>
             </div>
             <div class="row">
@@ -23,7 +41,7 @@
                     <label for="harga_satuan">Harga Satuan</label>
                 </div>
                 <div class="col-50">
-                    <input type="number" id="harga_satuan" name="harga_satuan">
+                    <input type="number" id="harga_satuan" name="harga_satuan" value="<?= $harga ?>">
                 </div>
             </div>
             <div class="row">
@@ -31,7 +49,7 @@
                     <label for="kadaluarsa">Kadaluarsa</label>
                 </div>
                 <div class="col-50">
-                    <input type="date" id="kadaluarsa" name="kadaluarsa">
+                    <input type="date" id="kadaluarsa" name="kadaluarsa" value="<?= $kadaluarsa ?>">
                 </div>
             </div>
             <div class="row">

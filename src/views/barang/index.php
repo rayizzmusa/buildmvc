@@ -1,3 +1,7 @@
+<?php
+Messages::flash();
+?>
+
 <div class="container">
     <div class="header">
         <h2>Daftar Barang</h2>

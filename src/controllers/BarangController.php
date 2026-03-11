@@ -60,6 +60,20 @@ class BarangController extends BaseController
 
 
         [$inputs, $errors] = $this->filter($_POST, $fields, $message);
-        var_dump($errors);
+
+        if ($inputs['kadaluarsa'] == "") {
+            $inputs['kadaluarsa'] = "0000-00-00";
+        }
+
+        if ($errors) {
+            Messages::setFlash('error', 'Gagal', $errors[0], $inputs);
+            $this->redirect('barang/insert');
+        }
+
+        $proses = $this->barangModel->insert($inputs);
+        if ($proses) {
+            Messages::setFlash('success', 'Berhasil', 'Barang Berhasil ditambahkan');
+            $this->redirect('barang');
+        }
     }
 }
