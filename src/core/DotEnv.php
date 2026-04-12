@@ -1,5 +1,9 @@
 <?php
 
+namespace MyApp\Core;
+
+use InvalidArgumentException;
+
 class DotEnv
 {
     protected $path;

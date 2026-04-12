@@ -1,5 +1,7 @@
 <?php
 
+use MyApp\Core\Database;
+
 class Barang_model extends Database
 {
     public function __construct()

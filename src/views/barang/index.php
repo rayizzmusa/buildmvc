@@ -1,4 +1,7 @@
 <?php
+
+use MyApp\Core\Messages;
+
 Messages::flash();
 ?>
 

@@ -1,5 +1,8 @@
 <?php
 
+use MyApp\Core\BaseController;
+use MyApp\Core\Messages;
+
 class BarangController extends BaseController
 {
     private $barangModel;
